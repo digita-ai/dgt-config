@@ -1,0 +1,41 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "name": "commitlint-config",
+      "path": "packages/commitlint-config"
+    },
+    {
+      "name": "eslint-config",
+      "path": "packages/eslint-config"
+    },
+    {
+      "name": "jest-config",
+      "path": "packages/jest-config"
+    },
+    {
+      "name": "lerna-config",
+      "path": "packages/lerna-config"
+    },
+    {
+      "name": "typescript-config",
+      "path": "packages/typescript-config"
+    }
+  ],
+  "settings": {
+    "eslint.format.enable": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "files.eol": "\n"
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint"
+    ]
+  }
+}

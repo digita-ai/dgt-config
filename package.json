@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "release": "lerna version",
+    "bootstrap": "npm ci && lerna bootstrap --ignore-prepublish",
+    "bootstrap:no-ci": "npm i && lerna bootstrap --no-ci --ignore-prepublish"
+  },
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0"
+  }
+}
