@@ -57,7 +57,7 @@ jobs:
 
   release:
     name: Create release
-    needs: test
+    # needs: test
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
 
