@@ -1,0 +1,27 @@
+{
+  "name": "@digita-ai/typescript-config",
+  "version": "0.1.0",
+  "description": "Shareable TypeScript config for internal use",
+  "author": "Wouter Termont <wouter.termont@digita.ai>",
+  "main": "./index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digita-ai/dgt-config.git",
+    "directory": "packages/typescript-config"
+  },
+  "bugs": {
+    "url": "https://github.com/digita-ai/dgt-config/issues"
+  },
+  "peerDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^32.3.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0"
+  }
+}

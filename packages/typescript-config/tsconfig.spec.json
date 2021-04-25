@@ -1,0 +1,23 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "allowJs": true,
+      "declaration": false,
+      "inlineSources": true,
+      "module": "es2020",
+      "sourceMap": false,
+      "strict": false,
+      "target": "es2020",
+      "types": ["jest", "node"],
+    },
+    "files": [
+      "./jest.config.ts"
+    ],
+    "include": [
+      "**/*.spec.ts"
+    ],
+    "exclude": [
+      "node_modules", 
+      "dist"
+    ],
+  }
