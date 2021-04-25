@@ -1,25 +1,5 @@
 
-/**
- * Shareable ESLint config for internal use at Digita, enforcing a uniform clean cody style.
- * 
- * Functionality of Prettier (P) and EditorConfig (EC) has been indicated in comments.
- * 
- * Auto-fix-on-save functionality with VSCode's dbaeumer.vscode-eslint plugin is enabled with the following settings:
- * ```
- * {
- *   "eslint.format.enable": true,
- *   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
- *   "editor.codeActionsOnSave": {
- *     "source.fixAll.eslint": true
- *   },
- *   "files.eol": "\n",
- * }
- * ```
- */
-
 module.exports = {
-
-    "files": [ "*.ts", "*.js" ],
     
     "plugins": [
         "eslint-plugin-import",
@@ -38,11 +18,24 @@ module.exports = {
         "plugin:import/typescript",
     ],
     
+    "ignorePatterns": [ 
+        "node_modules", 
+        "dist", 
+        "coverage", 
+        "*.conf.js", 
+        "*.config.js", 
+        "*.conf.ts", 
+        "*.config.ts",
+    ],
+
     "parser": "@typescript-eslint/parser",
 
     "parserOptions": {
         "sourceType": "module",
-        "project": [ "tsconfig.json", "tsconfig.*.json" ],
+        "project": [ 
+            "tsconfig.json", 
+            "tsconfig.*.json",
+        ],
     },
     
     "settings": {
@@ -54,8 +47,11 @@ module.exports = {
         "import/resolver": {
             "typescript": {
                 "alwaysTryTypes": true,
-                "project": [ "tsconfig.json", "tsconfig.*.json" ]
-            }
+                "project": [ 
+                    "tsconfig.json", 
+                    "tsconfig.*.json" 
+                ],
+            },
         },
 
     },
@@ -64,25 +60,30 @@ module.exports = {
 
         "array-bracket-newline": [                                                      // Enforces consistent newlines inside array brackets
             "error",
-            "consistent"
+            "consistent",
         ],
         
         "array-bracket-spacing": [                                                      // Enforces spacing inside array brackets
             "error",
-            "always"
+            "always",
         ],
         
         "array-element-newline": [                                                      // Enforces consistent newlines between array elements
             "error",
-            "consistent"
+            "consistent",
         ],
         
         "arrow-body-style": [                                                           // Enforces implicit return for simple expressions in arrow functions
             "error",
-            "as-needed"
+            "as-needed",
         ],
         
         "arrow-parens": [                                                               // Enforces parentheses around single argument in arrow functions argument (P arrowParens)
+            "error",
+            "always",
+        ],
+
+        "block-spacing": [                                                              // Enforces spacing inside same-line block statements
             "error",
             "always"
         ],
@@ -91,60 +92,61 @@ module.exports = {
             "error",
             "1tbs",
             {
-                "allowSingleLine": true
-            }
+                "allowSingleLine": true,
+            },
         ],
         
         "comma-dangle": [                                                               // Functionality subsumed by typescript plugin
-            "off"
+            "off",
         ],
         
         "comma-spacing": [                                                              // Functionality subsumed by typescript plugin
-            "off"
+            "off",
         ],
         
         "curly": [                                                                      // Enforces single statement block braces
-            "multi-line"
+            "error",
+            "multi-line",
         ],
         
         "dot-notation": [                                                               // Functionality subsumed by typescript plugin
-            "off"
+            "off",
         ],
         
         "eol-last": [                                                                   // Enforces a newline at the end of each file (EC insert_final_newline)
             "error",
-            "always"
+            "always",
         ],
         
         "eqeqeq": [                                                                     // Enforces strong equality checks
             "error",
-            "smart"
+            "smart",
         ],
         
         "function-call-argument-newline": [                                             // Enforces consistent newlines in function calls
             "error",
-            "consistent"
+            "consistent",
         ],
         
         "function-paren-newline": [                                                     // Enforces consistent newlines in parameter lists
             "error",
-            "consistent"
+            "consistent",
         ],
         
         "guard-for-in": [                                                               // Requires property check in for-in loops
-            "error"
+            "error",
         ],
         
         "import/order": [                                                               // Enforces correct ordering of import statements
-            "error"
+            "error",
         ],
         
         "indent": [                                                                     // Functionality subsumed by typescript plugin (P useTabs / P tabWidth / EC indent_style / EC indent_size)
-            "off"
+            "off",
         ],
         
         "jsdoc/check-alignment": [                                                      // Requires consistent alignment in comments (also in req.)
-            "error"
+            "error",
         ],
         
         "jsdoc/check-indentation": [                                                    // Requires consistent indentation in comments
@@ -152,18 +154,18 @@ module.exports = {
             {
                 "excludeTags": [
                     "example",
-                    "description"
+                    "description",
                 ]
-            }
+            },
         ],
         
         "jsdoc/newline-after-description": [                                            // Requires consistent padding in comments (also in req.)
-            "error"
+            "error",
         ],
         
         "linebreak-style": [                                                            // Enforces unix style line breaks (P endOfLine / EC end_of_line)
             "error",
-            "unix"
+            "unix",
         ],
 
         "max-len": [                                                                    // Requires max line length (P printWidth / EC max_line_length)
@@ -180,116 +182,133 @@ module.exports = {
         
         "new-parens": [                                                                 // Enforces parentheses for empty constructor call
             "error",
-            "always"
+            "always",
         ],
         
         "no-bitwise": [                                                                 // Disallows bitwise operators
-            "error"
+            "error",
         ],
         
         "no-caller": [                                                                  // Disallows deprecated caller and callee properties
-            "error"
+            "error",
         ],
         
         "no-console": [                                                                 // Disallows console logs
-            "error"
+            "error",
         ],
         
         "no-eval": [                                                                    // Disallows the use of eval()
-            "error"
+            "error",
         ],
         
         "no-multiple-empty-lines": [                                                    // Removes multiple empty lines
             "error",
             {
                 "max": 1
-            }
+            },
         ],
         
         "no-new-wrappers": [                                                            // Disallows primitive wrappers
-            "error"
+            "error",
         ],
         
         "no-shadow": [                                                                  // Functionality subsumed by typescript plugin
-            "off"
+            "off",
         ],
         
         "no-throw-literal": [                                                           // Disallows literal throws
-            "error"
+            "error",
         ],
         
         "no-trailing-spaces": [                                                         // Removes all trailing whitespace (EC trim_trailing_whitespace)
-            "error"
+            "error",
         ],
         
         "no-undef-init": [                                                              // Removes explicit undefined initializations
-            "error"
+            "error",
         ],
         
         "no-unused-expressions": [                                                      // Functionality subsumed by typescript plugin
-            "off"
+            "off",
         ],
         
         "no-use-before-define": [                                                       // Functionality subsumed by typescript plugin
-            "off"
+            "off",
         ],
         
         "no-useless-escape": [                                                          // Warns for useless escapes (sometimes clashes with nested quotes)
-            "warn"
+            "warn",
         ],
         
         "no-var": [                                                                     // Enforces let or const instead of var
-            "error"
+            "error",
         ],
 
         "object-curly-newline": [                                                       // Enforces consistent newlines in brackets
             "error",
             {
-                "consistent": true
-            }
+                "consistent": true,
+            },
         ],
         
         "object-curly-spacing": [                                                       // Functionality subsumed by typescript plugin (P bracketSpacing)
-            "off"
+            "off",
         ],
         
         "object-shorthand": [                                                           // Enforce use of object shorthand
             "error",
-            "always"
+            "always",
         ],
         
         "one-var": [                                                                    // Enforces multiple variable declarations per scope
             "error",
-            "never"
+            "never",
         ],
         
+        "padded-blocks": [                                                              // Enforces padding inside block statements
+            "error",
+            "always", 
+            {
+                "allowSingleLineBlocks": true,
+            },
+        ],
+        
+        "padding-line-between-statements": [                                            // Enforces padding lines before return statement
+            "error",
+            { 
+                blankLine: "always", 
+                prev: "*", 
+                next: "return",
+            },
+        ],
+
         "prefer-arrow/prefer-arrow-functions": [                                        // Enforces use of arrow functions where possible
-            "error"
+            "error",
         ],
         
         "prefer-const": [                                                               // Enforces const instead of un-reassigned let
-            "error"
+            "error",
         ],
         
         "quotes": [                                                                     // Functionality subsumed by typescript plugin (P singleQuote / EC quote_type)
-            "off"
+            "off",
         ],
         
         "radix": [                                                                      // Requires radix in parseInt()
-            "error"
+            "error",
         ],
         
         "semi": [                                                                       // Functionality subsumed by typescript plugin
-            "off"
+            "off",
         ],
         
         "sort-imports": [                                                               // Functionality subsumed by imports plugin
-            "off"
+            "off",
         ],
         
         "space-in-parens": [                                                            // Removes spaces from inside parentheses
             "error",
-            "never"
+            "never",
         ],
         
         "spaced-comment": [                                                             // Enforces spaces around comments
@@ -297,45 +316,45 @@ module.exports = {
             "always",
             {
                 "markers": [
-                    "/"
+                    "/",
                 ]
-            }
+            },
         ],
         
         "@typescript-eslint/array-type": [                                              // Enforces array type notation
             "error",
             {
-                "default": "array"
-            }
+                "default": "array",
+            },
         ],
         
         "@typescript-eslint/ban-types": [                                               // Disallows dangerous type names
-            "error"
+            "error",
         ],
         
         "@typescript-eslint/comma-dangle": [                                            // Enforces trailing commas (P trailingComma)
             "error",
-            "always-multiline"
+            "always-multiline",
         ],
         
         "@typescript-eslint/comma-spacing": [                                           // Enforces space after but not before commas
-            "error"
+            "error",
         ],
         
         "@typescript-eslint/consistent-type-assertions": [                              // Requires type casting with 'as'
-            "error"
+            "error",
         ],
         
         "@typescript-eslint/consistent-type-definitions": [                             // Enforces use of interface keyword
             "error",
-            "interface"
+            "interface",
         ],
         
         "@typescript-eslint/dot-notation": [                                            // Removes unnecessary bracket notations
             "error",
             {
-                "allowPattern": "^[A-Z]"
-            }
+                "allowPattern": "^[A-Z]",
+            },
         ],
 
         "@typescript-eslint/explicit-member-accessibility": [                           // Requires accessibility modifiers except public                      
@@ -348,8 +367,8 @@ module.exports = {
                     "methods": "no-public",
                     "properties": "off",
                     "parameterProperties": "no-public",
-                }
-            }
+                },
+            },
         ],
         
         "@typescript-eslint/indent": [                                                  // Enforces two-space indentation (P useTabs / P tabWidth / EC indent_style / EC indent_size)
@@ -357,15 +376,15 @@ module.exports = {
             2, 
             { 
                 /* fine-tuning possible */ 
-            }
+            },
         ],
         
         "@typescript-eslint/member-delimiter-style": [                                  // Enforces semicolon delimiters in interfaces
-            "error"
+            "error",
         ],
         
         "@typescript-eslint/no-empty-function": [                                       // Disallows empty functions
-            "error"
+            "error",
         ],
 
         "@typescript-eslint/no-shadow": [                                               // Disallow shadowing outer variables with inner ones
@@ -375,33 +394,40 @@ module.exports = {
                 "builtinGlobals": false,
                 "hoist": "all",
                 "ignoreTypeValueShadow": false,
-                "ignoreFunctionTypeParameterNameValueShadow": false
-            }
+                "ignoreFunctionTypeParameterNameValueShadow": false,
+            },
        
         ],
         
         "@typescript-eslint/no-unused-expressions": [                                   // Disallows unused expressions
             "error", 
             { 
-                "allowTernary": true 
-            }
+                "allowTernary": true,
+            },
+        ],
+        
+        "@typescript-eslint/no-unused-vars": [                                          // Warns for unused vars except as function arguments (stricter in req.)
+            "warn", 
+            { 
+                "args": "none" 
+            },
         ],
         
         "@typescript-eslint/no-use-before-define": [                                    // Disallows using not-yet-defined names
-            "error"
+            "error",
         ],
         
         "@typescript-eslint/object-curly-spacing": [                                    // Enforces spacing inside braces (P bracketSpacing)
             "error",
-            "always"
+            "always",
         ],
         
         "@typescript-eslint/prefer-for-of": [                                           // Requires for-of loops where possible
-            "error"
+            "error",
         ],
         
         "@typescript-eslint/prefer-function-type": [                                    // Enforces functions instead of interfaces with call signatures
-            "error"
+            "error",
         ],
  
         "@typescript-eslint/quotes": [                                                  // Enforces use of single quotes (P singleQuote / EC quote_type)                                                     
@@ -410,22 +436,22 @@ module.exports = {
             {
                 "avoidEscape": true,
                 "allowTemplateLiterals": true,
-            }
+            },
         ],
         
         "@typescript-eslint/semi": [                                                    // Enforces a semicolon at the end of each statement (P semi)
             "error",
-            "always"
+            "always",
         ],
         
         "@typescript-eslint/type-annotation-spacing": [                                 // Enforces space after but nor before type colon
-            "error"
+            "error",
         ],
         
         "@typescript-eslint/unified-signatures": [                                      // Requires reduction of overloads
-            "error"
+            "error",
         ],
 
-    }
+    },
 
 }
