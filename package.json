@@ -1,9 +1,13 @@
 {
   "name": "root",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "private": true,
   "commitlint": {
     "extends": [ "./packages/commitlint-config" ]
+  },
+  "lerna": {
+    "extends": "./packages/lerna-config",
+    "version": "0.0.2"
   },
   "scripts": {
     "release": "lerna version",

@@ -1,9 +1,10 @@
-{
-  "packages": [
-    "packages/*"
-  ],
-  "version": "0.1.0",
+
+module.exports = {
+  "packages": [ "packages/*" ],
   "command": {
+    "bootstrap": {
+      "ignorePrepublish": true,
+    },
     "version": {
       "allowBranch": [ "master", "develop" ],
       "conventionalCommits": true,
