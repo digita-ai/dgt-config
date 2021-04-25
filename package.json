@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "commitlint": {
-    "extends": [ "./packages/commitlint-config/commitlint.config.js" ]
+    "extends": [ "./packages/commitlint-config" ]
   },
   "scripts": {
     "release": "lerna version",
@@ -14,8 +14,6 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
-    "@commitlint/config-conventional": "^12.1.1",
-    "@commitlint/config-lerna-scopes": "^12.1.1",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
     "lerna": "^4.0.0",
