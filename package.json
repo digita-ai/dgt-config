@@ -2,6 +2,9 @@
   "name": "root",
   "version": "0.1.0",
   "private": true,
+  "commitlint": {
+    "extends": [ "./packages/commitlint-config/commitlint.config.js" ]
+  },
   "scripts": {
     "release": "lerna version",
     "postinstall": "husky install",
