@@ -1,15 +1,11 @@
 {
   "name": "root",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": true,
   "commitlint": {
     "extends": [
       "./packages/commitlint-config"
     ]
-  },
-  "lerna": {
-    "extends": "./packages/lerna-config",
-    "version": "0.0.2"
   },
   "lint-staged": {
     "*": []
@@ -17,12 +13,14 @@
   "scripts": {
     "release": "lerna version",
     "postinstall": "husky install",
-    "bootstrap": "npm ci && lerna bootstrap --ignore-prepublish",
-    "bootstrap:no-ci": "npm i && lerna bootstrap --no-ci --ignore-prepublish",
+    "bootstrap": "npm ci && lerna bootstrap",
+    "bootstrap:no-ci": "npm i && lerna bootstrap --no-ci",
     "lint:staged": "lerna run lint:staged --since HEAD --stream --concurrency 1"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
+    "@digita-ai/commitlint-config": "0.0.2",
+    "@digita-ai/lerna-config": "0.0.2",
     "conventional-changelog-conventionalcommits": "^4.5.0",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
