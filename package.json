@@ -11,6 +11,9 @@
     "extends": "./packages/lerna-config",
     "version": "0.0.2"
   },
+  "lint-staged": {
+    "*": []
+  },
   "scripts": {
     "release": "lerna version",
     "postinstall": "husky install",
