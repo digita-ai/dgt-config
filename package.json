@@ -3,7 +3,9 @@
   "version": "0.0.2",
   "private": true,
   "commitlint": {
-    "extends": [ "./packages/commitlint-config" ]
+    "extends": [
+      "./packages/commitlint-config"
+    ]
   },
   "lerna": {
     "extends": "./packages/lerna-config",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
+    "conventional-changelog-conventionalcommits": "^4.5.0",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
     "lerna": "^4.0.0",
