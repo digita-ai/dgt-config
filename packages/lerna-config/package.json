@@ -1,6 +1,6 @@
 {
   "name": "@digita-ai/lerna-config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shareable lerna config for internal use",
   "author": "Wouter Termont <wouter.termont@digita.ai>",
   "main": "./index.js",
