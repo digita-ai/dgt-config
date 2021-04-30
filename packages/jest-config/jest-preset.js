@@ -15,37 +15,7 @@ module.exports = {
   errorOnDeprecated: true,
   globals: {
     'ts-jest': {
-      tsconfig: {
-        //"allowJs": true,
-        //"allowUnreachableCode": true,
-        "baseUrl": "<rootDir>/",
-        //"checkJs": true,
-        //"composite": true,
-        "declaration": false, // differs from tsconfig
-        //"declarationMap": true,
-        "downlevelIteration": true,
-        //"emitDecoratorMetadata": true,
-        "esModuleInterop": true,
-        "experimentalDecorators": true,
-        "forceConsistentCasingInFileNames": true,
-        "importHelpers": true,
-        "inlineSourceMap": true, // differs from tsconfig
-        "inlineSources": true, // differs from tsconfig
-        "module": "es2020", // differs from tsconfig; switch to es2020 in v27
-        "moduleResolution": "node",
-        //"newLine": "LF",
-        "noFallthroughCasesInSwitch": true,
-        //"noImplicitOverride": true,
-        "noImplicitReturns": true,
-        //"noPropertyAccessFromIndexSignature": true,
-        //"noUncheckedIndexedAccess": true,
-        //"noUnusedLocals": true,
-        //"noUnusedParameters": true,
-        "outDir": "<rootDir>/dist",
-        "sourceMap": false, // differs from tsconfig
-        "strict": false, // differs from tsconfig; should be true !
-        "target": "es2020"
-      }
+      tsconfig: "<rootDir>/../tsconfig.spec.json"
     },
   },
   moduleFileExtensions: [ "ts", "js" ],
