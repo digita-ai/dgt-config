@@ -21,7 +21,8 @@
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsdoc": "^32.3.0",
-    "eslint-plugin-prefer-arrow": "^1.2.3"
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "lint-staged": "^10.5.4"
   },
   "dependencies": {
     "@typescript-eslint/parser": "^4.19.0",
