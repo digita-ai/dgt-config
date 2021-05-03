@@ -1,6 +1,6 @@
 {
   "name": "@digita-ai/commitlint-config",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Shareable CommitLint config for internal use",
   "author": "Wouter Termont <wouter.termont@digita.ai>",
   "main": "./index.js",
