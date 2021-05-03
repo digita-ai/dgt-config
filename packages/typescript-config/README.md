@@ -35,8 +35,16 @@ Put the following in the `tsconfig.spec.json`.
     "outDir": "./dist",
     "rootDir": "./lib",
     "module": "commonjs"
-  }
+  },
+  "include": [ 
+      "lib" 
+  ],
+  "exclude": [
+      "dist",
+      "node_modules",
+      "**/*.spec.ts"
+  ]
 }
 ```
 
-In each of the above config files, change the `baseUrl` (base for relative imports), `outDir` (output directory for builds) and `rootDir` (root directory of source files) to the relevant paths (`rootDir` maps on `outDir` during build). Also set the `module` type to `commonjs` for Node.js packages or to the desired ECMAScript version (e.g. `es2020`) for browser packages. Overwrite any of the preset directives if needed.
+In each of the above config files, change the `baseUrl` (base for relative imports), `outDir` (output directory for builds) and `rootDir` (root directory of source files) to the relevant paths (`rootDir` maps on `outDir` during build), and change the necessary `include`/`exclude` globs. Also set the `module` type to `commonjs` for Node.js packages or to the desired ECMAScript version (e.g. `es2020`) for browser packages. Overwrite any of the preset directives if needed.

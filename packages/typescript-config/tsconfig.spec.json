@@ -7,14 +7,4 @@
     "module": "es2020",
     "sourceMap": false,
   },
-  "files": [
-    "./jest.config.ts"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
-  "include": [
-    "**/*.spec.ts"
-  ]
 }
