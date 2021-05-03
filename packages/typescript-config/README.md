@@ -5,13 +5,13 @@ This package provides a Typescript configurations, one for building and one for 
 
 ## Installation
 
-In the root of your (mono)repo, install `@digita-ai/typescript-config` as a development dependency. From NPM v7 onwards, this will automatically add the following peer dependencies as well (if you use an earlier version, install these yourself). 
+In each Typescript package, install `@digita-ai/typescript-config` as a development dependency. From NPM v7 onwards, this will automatically add the following peer dependencies as well (if you use an earlier version, install these yourself). 
 
 - `typescript`
 - `@types/node`
 - `ts-node`
 
-Put the following in the `tsconfig.json` of your Typescript package(s).
+Put the following in the `tsconfig.json`.
 
 ```
 {
@@ -25,7 +25,7 @@ Put the following in the `tsconfig.json` of your Typescript package(s).
 }
 ```
 
-Put the following in the `tsconfig.spec.json` of your Typescript package(s).
+Put the following in the `tsconfig.spec.json`.
 
 ```
 {
