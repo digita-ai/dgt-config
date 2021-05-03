@@ -273,12 +273,34 @@ module.exports = {
             },
         ],
         
-        "padding-line-between-statements": [                                            // Enforces padding lines before return statement
+        "padding-line-between-statements": [                                            // Enforces padding lines ...
             "error",
             { 
-                blankLine: "always", 
+                blankLine: "always",                                                        // ... before return statements
                 prev: "*", 
                 next: "return",
+            },
+            { 
+                blankLine: "always",                                                        // ... before block statements
+                prev: "*", 
+                next: [
+                    "block-like",
+                    "multiline-var",
+                    "multiline-let",
+                    "multiline-const",
+                    "multiline-expression",
+                ],
+            },
+            { 
+                blankLine: "always",                                                        // ... after block statements
+                prev: [
+                    "block-like",
+                    "multiline-var",
+                    "multiline-let",
+                    "multiline-const",
+                    "multiline-expression",
+                ],
+                next: "*",
             },
         ],
 
@@ -375,6 +397,7 @@ module.exports = {
             "error", 
             2, 
             { 
+                "SwitchCase": 1,
                 /* fine-tuning possible */ 
             },
         ],
