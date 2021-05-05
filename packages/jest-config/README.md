@@ -49,7 +49,7 @@ When using git hooks in a monorepo, you might want to run Jest from the root `no
 "jest": {
     "preset": "@digita-ai/jest-config",
     "projects": [
-        "<rootDir>/packages/*/"
+        "./packages/*/package.json"
     ]
 }
 ```
