@@ -6,18 +6,21 @@ module.exports = merge.recursive(true, jsWithTs, {
   //clearMocks: true, // set to run jest.clearAllMocks() before each test
   collectCoverage: true,
   collectCoverageFrom: [ 
-    "**/*.{ts,js}", 
-    "!public-api.ts", 
-    "!node_modules", 
-    "!dist" 
+    "**/*.{ts,js}"
   ],
-  coverageDirectory: "<rootDir>/../", // since current reporters only output json summary
+  coverageDirectory: "<rootDir>", // since current reporters only output json summary
+  coveragePathIgnorePatterns: [
+    "<rootDir>/dist/",
+    "<rootDir>/node_modules/", 
+    "<rootDir>/lib/public-api.ts", 
+    "<rootDir>/lib/index.ts",
+  ],
   coverageProvider: "babel", // maybe change to v8 for speed, if it detects full coverage good enough
   coverageReporters: [ "json-summary", "text-summary", "text" ], // disabled json, lcov and clover reporters
   errorOnDeprecated: true,
   globals: {
     'ts-jest': {
-      tsconfig: "<rootDir>/../tsconfig.spec.json"
+      tsconfig: "<rootDir>/tsconfig.spec.json"
     },
   },
   moduleFileExtensions: [ "ts", "js" ],
