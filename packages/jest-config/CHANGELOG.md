@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.3.3](https://github.com/digita-ai/dgt-config/compare/v0.3.2...v0.3.3) (2021-05-05)
+
+
+### **Features**
+
+* ignore config files in jest ([c5e9e42](https://github.com/digita-ai/dgt-config/commit/c5e9e42f29bb9d221ed7ba19daa30dd5d67c68b0))
+
+
+
 ### [0.3.2](https://github.com/digita-ai/dgt-config/compare/v0.3.1...v0.3.2) (2021-05-05)
 
 **Note:** Version bump only for package @digita-ai/jest-config
