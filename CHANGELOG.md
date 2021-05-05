@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/digita-ai/dgt-config/compare/v0.2.2...v0.3.0) (2021-05-05)
+
+
+### **Bug Fixes**
+
+* nested presets in jest config ([6e2f8a1](https://github.com/digita-ai/dgt-config/commit/6e2f8a1bc2f97764c7b7db6558cb8a410adb11d1))
+
+
+### **Documentation**
+
+* updated readme's ([f6baf01](https://github.com/digita-ai/dgt-config/commit/f6baf01649dfc3bf6bc0d918d34d687350413ee7))
+
+
+### **Features**
+
+* allowJs in tsconfig ([4fdbb80](https://github.com/digita-ai/dgt-config/commit/4fdbb80a68eddf9171b050025dce6de77257293f))
+
+
+
 ### [0.2.2](https://github.com/digita-ai/dgt-config/compare/v0.2.1...v0.2.2) (2021-05-03)
 
 
