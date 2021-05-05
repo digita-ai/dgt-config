@@ -1,5 +1,7 @@
+const merge = require('merge');
+const jsWithTs = require('ts-jest/presets/js-with-ts/jest-preset');
 
-module.exports = {
+module.exports = merge.recursive(true, jsWithTs, {
   //bail: 1, // set to stop testing after N failures
   //clearMocks: true, // set to run jest.clearAllMocks() before each test
   collectCoverage: true,
@@ -19,7 +21,6 @@ module.exports = {
     },
   },
   moduleFileExtensions: [ "ts", "js" ],
-  preset: "ts-jest",
   // resetMocks: true, // set to run jest.resetAllMocks() before each test
   // restoreMocks: true, // set to run jest.restoreAllMocks() before each test
   testMatch: [ "**/*.spec.ts" ],
@@ -28,4 +29,4 @@ module.exports = {
     '^.+\\.ts?$': 'ts-jest'
   },
   // verbose: true,
-};
+});

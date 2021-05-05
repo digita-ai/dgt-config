@@ -16,6 +16,7 @@
     "url": "https://github.com/digita-ai/dgt-config/issues"
   },
   "dependencies": {
+    "merge": "^2.1.1",
     "ts-jest": "^26.5.5",
     "typescript": "^4.2.3"
   },
