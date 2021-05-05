@@ -1,9 +1,8 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        //"allowJs": true,
+        "allowJs": true,
         //"allowUnreachableCode": true,
-        //"checkJs": true,
         //"composite": true,
         "declaration": true,
         //"declarationMap": true,
