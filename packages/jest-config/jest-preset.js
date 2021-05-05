@@ -12,8 +12,8 @@ module.exports = merge.recursive(true, jsWithTs, {
   coveragePathIgnorePatterns: [
     "<rootDir>/dist/",
     "<rootDir>/node_modules/", 
-    "<rootDir>/lib/public-api.ts", 
-    "<rootDir>/lib/index.ts",
+    "<rootDir>/.*\\.conf(ig)?.ts",
+    "<rootDir>/lib/public-api.ts",
   ],
   coverageProvider: "babel", // maybe change to v8 for speed, if it detects full coverage good enough
   coverageReporters: [ "json-summary", "text-summary", "text" ], // disabled json, lcov and clover reporters
