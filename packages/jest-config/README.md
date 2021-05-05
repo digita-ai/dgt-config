@@ -8,10 +8,11 @@ This package provides a Jest preset configuration, used internally at Digita to 
 In the root of your (mono)repo, install `@digita-ai/jest-config` as a development dependency. From NPM v7 onwards,, this will automatically add the following peer dependencies as well (if you use an earlier version, install these yourself). 
 
 - `jest`
-- `@types/jest`
 - `jest-extended`
 - `jest-mock-extended`
 - `jest-coverage-thresholds-bumper`
+- `@types/jest`
+- `ts-jest`
 
 It will also suggest the following optional dependencies.
 
