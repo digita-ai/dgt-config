@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.3.4](https://github.com/digita-ai/dgt-config/compare/v0.3.3...v0.3.4) (2021-05-10)
+
+
+### **Features**
+
+* add coverage folder to jest ignore patterns ([3be40d4](https://github.com/digita-ai/dgt-config/commit/3be40d44a931ec3904fbe48228f2c361600f5965))
+
+
+
 ### [0.3.3](https://github.com/digita-ai/dgt-config/compare/v0.3.2...v0.3.3) (2021-05-05)
 
 
