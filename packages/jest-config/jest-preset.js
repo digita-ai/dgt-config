@@ -11,6 +11,7 @@ module.exports = merge.recursive(true, jsWithTs, {
   coverageDirectory: "<rootDir>", // since current reporters only output json summary
   coveragePathIgnorePatterns: [
     "<rootDir>/dist/",
+    "<rootDir>/coverage/",
     "<rootDir>/node_modules/", 
     "<rootDir>/.*\\.conf(ig)?.ts",
     "<rootDir>/lib/public-api.ts",
