@@ -2,8 +2,10 @@
   "packages": [
     "packages/*"
   ],
-  "version": "0.0.1",
   "command": {
+    "bootstrap": {
+      "ignorePrepublish": true
+    },
     "version": {
       "allowBranch": [
         "master",
@@ -53,5 +55,6 @@
         "userUrlFormat": "{{host}}/{{user}}"
       }
     }
-  }
+  },
+  "version": "0.3.4"
 }

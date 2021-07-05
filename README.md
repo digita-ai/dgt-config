@@ -1,56 +1,26 @@
-# dgt-config
-Standard configuration of repos, packages etc. Easy to copy or inherit from.
 
-<!-- {
-  "root": true
-  "env": {
-    "browser": true,
-    "node": true,
-    "worker": true,
-    "serviceworker": true,
-    "es6": true,
-    "es2020": true,
-    "jest": true
-  },
-  "ignorePatterns": ["node_modules", "dist", "coverage", "*.conf.js", "*.config.js", "*.conf.ts", "*.config.ts"],
-  "extends:": {
-    //"plugin:@typescript-eslint/recommended-requiring-type-checking", // throws a lot of errors in legacy code
-    //"plugin:jsdoc/recommended", // throws a lot of warnings in legacy code
-    //"plugin:import/errors", // throws some errors in legacy code
-  },
-  "rules": {
-    "id-match": "off", // we might want to add naming convention regex ?
-    "id-denylist": "off", // we might want to add some unwanted generic names ?
-    "no-underscore-dangle": "off", // we might disallow underscores ?
-    "no-invalid-this": "off", // we might turn this on when class properties become supported ?
-    "max-classes-per-file": [ "off", 1], // we might want to enforce this ?
-    "@typescript-eslint/no-unused-vars": "off", // we might turn these warnings on, even if legacy throws a lot of them
-    "@typescript-eslint/no-explicit-any": "off", // we might turn these warnings on, even if legacy throws a lot of them
-    "@typescript-eslint/explicit-module-boundary-types": "off", // we might turn these warnings on, even if legacy throws a lot of them
-    "@typescript-eslint/member-ordering": "off", // we might devise a standard ordering for class members ?
-    "@typescript-eslint/naming-convention": "off", // we might devise standard naming conventions with this powerful rule ?
-    "@typescript-eslint/consistent-type-assertions": "error", // requires type casting style (could be stronger)
-    "@typescript-eslint/no-shadow": [ // disallow shadowing outer variables with inner ones
-        "error",
-        {
-        "builtinGlobals": false, // should probably be true, but throws a lot of legacy errors
-        "hoist": "all",
-        "ignoreTypeValueShadow": false,
-        "ignoreFunctionTypeParameterNameValueShadow": false
-        }
-    ],
-    "@typescript-eslint/explicit-member-accessibility": [                                       // Requires accessibility modifiers
-        "error",
-        {
-            "accessibility": "explicit", // we might enforce this stronger, even if legacy throws a lot of errors
-            "overrides": {
-                "accessors": "no-public",
-                "constructors": "no-public",
-                "methods": "no-public",
-                "properties": "off",
-                "parameterProperties": "no-public",
-            }
-        }
-    ],
-  }
-} -->
+# Digita Configuration Repository
+
+This repository provides a standard configuration for repositories and packages, used internally at Digita to adopt a uniform clean coding environment. It contains the following configuration packages:
+
+- [`commitlint-config`](./packages/commitlint-config#readme)
+- [`eslint-config`](./packages/eslint-config#readme)
+- [`jest-config`](./packages/jest-config#readme)
+- [`lerna-config`](./packages/lerna-config#readme)
+- [`typescript-config`](./packages/typescript-config#readme)
+
+## Installation
+
+The installation instructions of each configuration can be found in the separate packages of this repo. Make sure your (mono)repo root contains an `.nvmrc` containing the desired version of Node.js (in our case: `14`), and an `.npmrc` with the following NPM configuration, containing a token for our Github Packages repository.
+
+```
+registry=https://registry.npmjs.org/
+
+@digita-ai:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NPM_TOKEN}
+always-auth=true
+```
+
+## Git hooks
+
+The Git hooks of this repository also serve as an instantly copyable base for new (mono)repos. We use Husky to share them via Git. Set it up by installing `husky` in the repo root and adding `husky install` as `postinstall` script to the root `package.json`. Then copy the `.husky` directory from this repo, and make sure to make the hooks themselves executable (e.g. `chmod a+x .husky/*`).
