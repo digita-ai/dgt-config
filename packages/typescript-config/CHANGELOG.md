@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.0](https://github.com/digita-ai/dgt-config/compare/v0.3.4...v0.4.0) (2021-07-08)
+
+
+### **Features**
+
+* sourcemap for tsconfig.spec ([5ec7edb](https://github.com/digita-ai/dgt-config/commit/5ec7edb0fb1d7ac6b74c025ae3c1e3a8692a90c2))
+
+
+
 ### [0.3.4](https://github.com/digita-ai/dgt-config/compare/v0.3.3...v0.3.4) (2021-05-10)
 
 **Note:** Version bump only for package @digita-ai/typescript-config
