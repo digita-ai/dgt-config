@@ -33,5 +33,4 @@ module.exports = merge.recursive(true, jsWithTs, {
     '^.+\\.ts?$': 'ts-jest'
   },
   // verbose: true,
-  testRunner: "jest-jasmine2",
 });
