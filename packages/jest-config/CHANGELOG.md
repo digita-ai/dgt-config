@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.4.2](https://github.com/digita-ai/dgt-config/compare/v0.4.1...v0.4.2) (2022-01-04)
+
+
+### **Bug Fixes**
+
+* use jasmine test runner ([#12](https://github.com/digita-ai/dgt-config/issues/12)) ([0844582](https://github.com/digita-ai/dgt-config/commit/08445820b5bd8af9ca5b7587e39f0068cc4029d1))
+
+
+
 ### [0.4.1](https://github.com/digita-ai/dgt-config/compare/v0.4.0...v0.4.1) (2022-01-04)
 
 **Note:** Version bump only for package @digita-ai/jest-config
