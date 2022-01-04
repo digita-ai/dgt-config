@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.4.1](https://github.com/digita-ai/dgt-config/compare/v0.4.0...v0.4.1) (2022-01-04)
+
+
+### **Documentation**
+
+* fix typo ([5db1595](https://github.com/digita-ai/dgt-config/commit/5db1595b8a4e9c11fc6fd5e7d69cf4798328078f))
+
+
+
 ## [0.4.0](https://github.com/digita-ai/dgt-config/compare/v0.3.4...v0.4.0) (2021-07-08)
 
 
