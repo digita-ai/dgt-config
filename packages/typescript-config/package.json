@@ -1,6 +1,6 @@
 {
   "name": "@digita-ai/typescript-config",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Shareable TypeScript config for internal use",
   "author": "Wouter Termont <wouter.termont@digita.ai>",
   "main": "./index.json",

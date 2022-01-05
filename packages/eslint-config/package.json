@@ -1,6 +1,6 @@
 {
   "name": "@digita-ai/eslint-config",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Shareable ESLint config for internal use",
   "author": "Wouter Termont <wouter.termont@digita.ai>",
   "main": "./index.js",
