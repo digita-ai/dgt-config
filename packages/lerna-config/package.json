@@ -16,6 +16,6 @@
     "url": "https://github.com/digita-ai/dgt-config/issues"
   },
   "peerDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^5.1.2"
   }
 }
