@@ -2,8 +2,12 @@
 module.exports = {
     
     "plugins": [
+        "eslint-plugin-deprecation",
         "eslint-plugin-import",
+        "eslint-plugin-jest",
+        "eslint-plugin-jest-formatting",
         "eslint-plugin-jsdoc",
+        "eslint-plugin-no-null",
         "eslint-plugin-prefer-arrow",
         "@typescript-eslint/eslint-plugin",
     ],
@@ -11,11 +15,14 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        //"plugin:@typescript-eslint/recommended-requiring-type-checking",
-        //"plugin:jsdoc/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:import/warnings",
-        //"plugin:import/errors",
+        "plugin:import/errors",
         "plugin:import/typescript",
+        "plugin:jest/style",
+        "plugin:jest/recommended",
+        "plugin:jest-formatting/strict",
+        //"plugin:jsdoc/recommended",
     ],
     
     "ignorePatterns": [ 
@@ -36,6 +43,16 @@ module.exports = {
             "tsconfig.json", 
             "tsconfig.*.json",
         ],
+    },
+
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true,
+        "jest/globals": true,
+        "node": true,
+        "serviceworker": true,
+        "worker": true,
     },
     
     "settings": {
@@ -108,6 +125,10 @@ module.exports = {
             "error",
             "multi-line",
         ],
+
+        "deprecation/deprecation": [                                                    // Warns for use of deprecated code
+            "warn",
+        ],
         
         "dot-notation": [                                                               // Functionality subsumed by typescript plugin
             "off",
@@ -137,6 +158,10 @@ module.exports = {
             "error",
         ],
         
+        "import/no-unresolved": [                                                       // Disables checking for module resolution
+            "off",
+        ],
+
         "import/order": [                                                               // Enforces correct ordering of import statements
             "error",
         ],
@@ -160,6 +185,10 @@ module.exports = {
         ],
         
         "jsdoc/newline-after-description": [                                            // Requires consistent padding in comments (also in req.)
+            "error",
+        ],
+
+        "keyword-spacing": [                                                            // Enforces spaces around keywords
             "error",
         ],
         
@@ -200,7 +229,26 @@ module.exports = {
         "no-eval": [                                                                    // Disallows the use of eval()
             "error",
         ],
-        
+
+        "no-invalid-this": [                                                            // Warns for use of this in dangerous places
+            "warn",
+            // {
+            //     "capIsConstructor": false,
+            // }
+        ],
+
+        "no-multi-spaces": [                                                            // Disallows multiple spaces (with formatting exceptions)
+            "error", 
+            { 
+                "exceptions": {
+                    "Property": true,
+                    "BinaryExpression": true,
+                    "VariableDeclarator": true,
+                    "ImportDeclaration": true,
+                },
+            },
+        ],
+
         "no-multiple-empty-lines": [                                                    // Removes multiple empty lines
             "error",
             {
@@ -210,6 +258,17 @@ module.exports = {
         
         "no-new-wrappers": [                                                            // Disallows primitive wrappers
             "error",
+        ],
+
+        "no-null/no-null": [                                                            // Disallows use of null
+            "error",
+        ],
+
+        "no-param-reassign": [                                                          // Warns for reassignment of parameters and their properties
+            "warn", 
+            { 
+                "props": true 
+            }
         ],
         
         "no-shadow": [                                                                  // Functionality subsumed by typescript plugin
@@ -227,8 +286,20 @@ module.exports = {
         "no-undef-init": [                                                              // Removes explicit undefined initializations
             "error",
         ],
+
+        "no-underscore-dangle": [                                                       // Disallows dangling underscores
+            "error",
+            {
+                "enforceInMethodNames": true,
+                "allowFunctionParams": false,
+            },
+        ],
         
         "no-unused-expressions": [                                                      // Functionality subsumed by typescript plugin
+            "off",
+        ],
+
+        "no-unused-vars": [                                                             // Functionality subsumed by typescript plugin
             "off",
         ],
         
@@ -319,6 +390,11 @@ module.exports = {
         "radix": [                                                                      // Requires radix in parseInt()
             "error",
         ],
+
+        "rest-spread-spacing": [                                                        // Enforces space after spread operator
+            "error", 
+            "always"
+        ],
         
         "semi": [                                                                       // Functionality subsumed by typescript plugin
             "off",
@@ -350,6 +426,10 @@ module.exports = {
             },
         ],
         
+        "@typescript-eslint/await-thenable": [                                          // Warns for redundant awaits (weaker than recommendation)
+            "warn",
+        ],
+        
         "@typescript-eslint/ban-types": [                                               // Disallows dangerous type names
             "error",
         ],
@@ -363,8 +443,12 @@ module.exports = {
             "error",
         ],
         
-        "@typescript-eslint/consistent-type-assertions": [                              // Requires type casting with 'as'
+        "@typescript-eslint/consistent-type-assertions": [                              // Disallows type casting
             "error",
+            {
+                "assertionStyle": "never",
+                //"objectLiteralTypeAssertions": "never",
+            }
         ],
         
         "@typescript-eslint/consistent-type-definitions": [                             // Enforces use of interface keyword
@@ -410,16 +494,39 @@ module.exports = {
             "error",
         ],
 
-        "@typescript-eslint/no-shadow": [                                               // Disallow shadowing outer variables with inner ones
+        "@typescript-eslint/no-explicit-any": [                                         // Warns for explicit typing as any
+            "warn",
+            // {
+            //     "fixToUnknown": true,
+            // },
+        ],
+
+        "@typescript-eslint/no-shadow": [                                               // Warns about shadowing outer variables with inner ones
                                                                     
-            "error",
+            "warn",
             {
-                "builtinGlobals": false,
+                "builtinGlobals": true,
                 "hoist": "all",
                 "ignoreTypeValueShadow": false,
                 "ignoreFunctionTypeParameterNameValueShadow": false,
             },
        
+        ],
+
+        "@typescript-eslint/no-unsafe-assignment": [                                    // Warns for assignment of any (weaker than recommendation)
+            "warn",
+        ],
+
+        "@typescript-eslint/no-unsafe-call": [                                          // Warns for function call on any (weaker than recommendation)
+            "warn",
+        ],
+
+        "@typescript-eslint/no-unsafe-member-access": [                                 // Warns for property access on any (weaker than recommendation)
+            "warn",
+        ],
+
+        "@typescript-eslint/no-unsafe-return": [                                        // Warns for return of any (weaker than recommendation)
+            "warn",
         ],
         
         "@typescript-eslint/no-unused-expressions": [                                   // Disallows unused expressions
@@ -429,10 +536,11 @@ module.exports = {
             },
         ],
         
-        "@typescript-eslint/no-unused-vars": [                                          // Warns for unused vars except as function arguments (stricter in req.)
-            "warn", 
+        "@typescript-eslint/no-unused-vars": [                                          // Disallows unused vars except before used function arguments
+            "error", 
             { 
-                "args": "none" 
+                "args": "after-used",
+                //"argsIgnorePattern": "^_",
             },
         ],
         
@@ -462,6 +570,20 @@ module.exports = {
             },
         ],
         
+        "@typescript-eslint/require-await": [                                           // Warns for possible redundant async functions (weaker than recommendation)
+            "warn",
+        ],
+
+        "@typescript-eslint/restrict-template-expressions": [                           // Warns for hard to print template expressions (weaker than recommendation)
+            "warn",
+            {
+                "allowNumber": true,
+                "allowBoolean": true,
+                "allowAny": false,
+                "allowNullish": false,
+            },
+        ],
+        
         "@typescript-eslint/semi": [                                                    // Enforces a semicolon at the end of each statement (P semi)
             "error",
             "always",
@@ -476,5 +598,47 @@ module.exports = {
         ],
 
     },
+
+    "overrides": [
+
+        {
+
+            "files": [ "**/*.ts" ],
+
+            "rules": {
+
+                "@typescript-eslint/explicit-module-boundary-types": [                  // Enforces return types (only it TS files)
+                    "error",
+                    {
+                        "allowArgumentsExplicitlyTypedAsAny": true,
+                    },
+                ],
+
+            },
+
+        },
+
+        {
+
+            "files": [ "**/*.spec.ts" ],
+
+            "rules": {
+
+                "no-null/no-null": [                                                    // Allows use of null in tests
+                    "off",
+                ],
+                
+                "@typescript-eslint/consistent-type-assertions": [                      // Enforces type casting with 'as' in tests
+                    "error",
+                    {
+                        "assertionStyle": "as",
+                    }
+                ],
+
+            },
+
+        },
+
+    ],
 
 }

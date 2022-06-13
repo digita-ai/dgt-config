@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.4.4](https://github.com/digita-ai/dgt-config/compare/v0.4.3...v0.4.4) (2022-01-05)
+
+**Note:** Version bump only for package root
+
+
+
+
+
+### [0.4.3](https://github.com/digita-ai/dgt-config/compare/v0.4.2...v0.4.3) (2022-01-05)
+
+**Note:** Version bump only for package root
+
+
+
+
+
+### [0.4.2](https://github.com/digita-ai/dgt-config/compare/v0.4.1...v0.4.2) (2022-01-04)
+
+
+### **Bug Fixes**
+
+* use jasmine test runner ([#12](https://github.com/digita-ai/dgt-config/issues/12)) ([0844582](https://github.com/digita-ai/dgt-config/commit/08445820b5bd8af9ca5b7587e39f0068cc4029d1))
+
+
+
+### [0.4.1](https://github.com/digita-ai/dgt-config/compare/v0.4.0...v0.4.1) (2022-01-04)
+
+
+### **Documentation**
+
+* fix typo ([5db1595](https://github.com/digita-ai/dgt-config/commit/5db1595b8a4e9c11fc6fd5e7d69cf4798328078f))
+
+
+
+## [0.4.0](https://github.com/digita-ai/dgt-config/compare/v0.3.4...v0.4.0) (2021-07-08)
+
+
+### **Features**
+
+* new eslint rules ([80290a9](https://github.com/digita-ai/dgt-config/commit/80290a905c702f02c40f2ad30c21376f87aecfc4))
+* no more checks on merge ([6ca81ff](https://github.com/digita-ai/dgt-config/commit/6ca81ff2d7364507706d4aeb9ede0a4836448aa9))
+* sourcemap for tsconfig.spec ([5ec7edb](https://github.com/digita-ai/dgt-config/commit/5ec7edb0fb1d7ac6b74c025ae3c1e3a8692a90c2))
+
+
+
 ### [0.3.4](https://github.com/digita-ai/dgt-config/compare/v0.3.3...v0.3.4) (2021-05-10)
 
 

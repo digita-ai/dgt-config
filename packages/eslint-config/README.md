@@ -8,8 +8,12 @@ This package provides a shareable ESLint configuration, used internally at Digit
 In the root of your (mono)repo, install `@digita-ai/eslint-config` as a development dependency. From NPM v7 onwards,, this will automatically add the following peer dependencies as well (if you use an earlier version, install these yourself). 
 
 - `eslint`
-- `eslint-plugin-jsdoc`
+- `eslint-plugin-deprecation`
 - `eslint-plugin-import`
+- `eslint-plugin-jest`
+- `eslint-plugin-jest-formatting`
+- `eslint-plugin-jsdoc`
+- `eslint-plugin-no-null`
 - `eslint-plugin-prefer-arrow`
 - `eslint-import-resolver-typescript`
 - `@typescript-eslint/eslint-plugin`
