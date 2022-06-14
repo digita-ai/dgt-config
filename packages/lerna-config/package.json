@@ -1,6 +1,6 @@
 {
   "name": "@digita-ai/lerna-config",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "Shareable lerna config for internal use",
   "author": "Wouter Termont <wouter.termont@digita.ai>",
   "main": "./index.js",
@@ -16,6 +16,6 @@
     "url": "https://github.com/digita-ai/dgt-config/issues"
   },
   "peerDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^5.1.2"
   }
 }
