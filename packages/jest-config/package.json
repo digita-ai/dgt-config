@@ -30,5 +30,11 @@
   "optionalDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "jest-fetch-mock": "^3.0.3"
+  },
+  "overrides": {
+    "jest-fetch-mock": {
+      "cross-fetch": "^3.1.5",
+      "node-fetch": "^2.6.7"
+    }
   }
 }
