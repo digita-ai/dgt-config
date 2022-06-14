@@ -71,6 +71,9 @@ echo "$RELEVANT" | grep -q "^package.json$" && npm i
 PACKAGES=$(echo "$RELEVANT" | grep "package.json$" | grep -v "^package.json$" | xargs cat | grep name
 echo "$PACKAGES" | sed 's/.*"name": "\(.*\)".*/--scope "\1"/g') | xargs ./node_modules/.bin/lerna bootstrap --since HEAD
 
+## Run tests related to staged files
+echo "$RELEVANT" | xargs ./node_modules/.bin/jest --bail --coverage --silent --passWithNoTests --findRelatedTests
+
 if [[ $? -ne 0 ]] ; then
     echo "[COMMIT-MSG Hook] You tried to commit changes without a WIP mention,"
     echo "[COMMIT-MSG Hook] but tests related to staged files or yet untested WIP commits are failing."
